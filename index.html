@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Frontier Labs Index</title>
+<meta name="description" content="A minimal index of the most important AI research papers from Anthropic, OpenAI, Google DeepMind, NVIDIA, DeepSeek, Moonshot AI and Zhipu AI." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23151515'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=3" />
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="brand" href="#top">Frontier Labs Index</a>
+    <span class="masthead-note" id="mastheadNote"></span>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+
+  <section class="hero">
+    <h1>Frontier Labs Index</h1>
+    <p class="lede">
+      A curated index of the most influential papers from seven leading AI labs: Anthropic, OpenAI,
+      Google DeepMind, NVIDIA, DeepSeek, Moonshot AI and Zhipu AI. Select any paper for a short summary and a link to the full text.
+    </p>
+    <p class="tally" id="stats"></p>
+  </section>
+
+  <section class="library" id="papers">
+
+    <div class="search-box">
+      <label class="visually-hidden" for="search">Search papers</label>
+      <input id="search" type="search" placeholder="Search titles, topics or labs" autocomplete="off" />
+    </div>
+
+    <div class="chips" id="chips" role="group" aria-label="Filter by lab"></div>
+
+    <div class="sort-row">
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+      <div class="selects">
+        <label>Year
+          <select id="yearSelect" aria-label="Filter by year"></select>
+        </label>
+        <label>Topic
+          <select id="topicSelect" aria-label="Filter by topic"></select>
+        </label>
+        <label>Sort
+          <select id="sortSelect" aria-label="Sort order">
+            <option value="new">Newest first</option>
+            <option value="old">Oldest first</option>
+            <option value="lab">By lab</option>
+            <option value="az">A to Z</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="list" id="list"></div>
+
+    <div class="empty" id="empty" hidden>
+      <p>No papers match these filters.</p>
+      <button class="text-button" id="resetBtn" type="button">Clear filters</button>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>An independent index of publicly available papers. Each paper belongs to its authors and publishers.</p>
+    <div class="footer-labs" id="footerLabs"></div>
+    <div class="footer-tools">
+      <button class="text-button" id="zipBtn" type="button">Download project as ZIP</button>
+      <a class="text-button zip-link" id="zipLink" download="ai-research-atlas.zip" hidden>Save the ZIP</a>
+      <p class="zip-note" id="zipNote" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</footer>
+
+<div class="sheet" id="modal" hidden>
+  <div class="sheet-backdrop" data-close></div>
+  <article class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <button class="sheet-close" type="button" data-close>Close</button>
+    <div class="sheet-body" id="modalBody"></div>
+  </article>
+</div>
+
+<script src="data.js?v=3"></script>
+<script src="app.js?v=3"></script>
+</body>
+</html>
